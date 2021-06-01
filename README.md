@@ -43,14 +43,14 @@ Visit [https://mientz.github.io/zte-modem-api-docs/](https://mientz.github.io/zt
 - [x] Authentication
 - [x] GSM & LTE Properties
   - [x] GSM network properties
-  - [] Carrier network selections
+  - [ ] Carrier network selections
 - [x] PPP properties
 - [x] WAN connection properties
 - [x] Messaging system
-- [] Wireless-LAN properties
-- [] Device properties
-- [] GSM-7 & UCS-2/Unicode documentations
-- [] Error & response documentations
+- [ ] Wireless-LAN properties
+- [ ] Device properties
+- [ ] GSM-7 & UCS-2/Unicode documentations
+- [ ] Error & response documentations
 
 ## Credits
 
