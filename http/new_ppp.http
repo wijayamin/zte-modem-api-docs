@@ -1,0 +1,9 @@
+POST /goform/goform_set_cmd_process HTTP/1.1
+Host: 192.168.0.1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://192.168.0.1/index.html
+Content-Length: 265
+
+goformId=APN_PROC_EX&apn_action=save&apn_mode=manual&3&apn_select=manual&pdp_select=auto
+profile_name=test1&wan_dial=*99%2&pdp_type=IP&index=7&wan_apn=test&ppp_auth_mode=pap&
+ppp_username=test&ppp_passwd=test&dns_mode=auto

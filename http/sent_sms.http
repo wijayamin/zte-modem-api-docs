@@ -1,0 +1,8 @@
+POST /goform/goform_set_cmd_process HTTP/1.1
+Host: 192.168.0.1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://192.168.0.1/index.html
+Content-Length: 265
+
+# isTest=false&goformId=SEND_SMS&notCallback=true&Number=%2B6285157458688&sms_time=21%3B05%3B28%3B16%3B53%3B20%3B%2B7&MessageBody=0074006500730074&ID=-1&encode_type=GSM7_default
+goformId=SEND_SMS&Number=MAXstream&sms_time=21%3B05%3B28%3B16%3B53%3B20%3B%2B7&MessageBody=0074006500730074&ID=-1&encode_type=GSM7_default

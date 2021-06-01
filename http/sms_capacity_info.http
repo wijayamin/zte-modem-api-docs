@@ -1,0 +1,6 @@
+POST  /goform/goform_get_cmd_process HTTP/1.1
+Host: 192.168.0.1
+Accept: application/json, text/javascript, */*; q=0.01
+Referer: http://192.168.0.1/index.html
+
+cmd=sms_capacity_info,sms_unread_num

@@ -1,0 +1,7 @@
+POST /goform/goform_set_cmd_process HTTP/1.1
+Host: 192.168.0.1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://192.168.0.1/index.html
+Content-Length: 265
+
+isTest=false&goformId=APN_PROC_EX&apn_mode=manual&apn_action=set_default&set_default_flag=1&pdp_type=IP&index=4
