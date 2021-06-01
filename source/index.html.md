@@ -1,6 +1,15 @@
 ---
 title: Beeline MF90 API
 
+meta:
+  - name: description
+    content: Documentation for ZTE Web UI Modem
+  - name: keywords
+    content: ZTE,Web,UI,modem,API,Documentation
+  - name: google-site-verification
+    content: msBeeCY7-smcfjFEqCkjTVrUUu1bTc1qaqBcyVmVvck
+
+
 language_tabs: # must be one of https://git.io/vQNgJ
   - http
   # - shell
@@ -8,7 +17,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   # - <a href='#'>Sign Up for a Developer Key</a>
-  # - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors

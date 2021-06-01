@@ -11,7 +11,7 @@
   <a href="LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/mientz/zte-modem-api-docs?style=flat-square">
   </a>
-  <a href="https://mientz.github.io/zte-modem-api-docs/" target="_blank">
+  <a href="https://mientz.github.io/zte-modem-api-docs/index.html" target="_blank">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/mientz/zte-modem-api-docs/Build?style=flat-square">
   </a>
   <a href="https://github.com/mientz/zte-modem-api-docs/releases/latest" target="_blank">
@@ -30,7 +30,7 @@
 An API for ZTE GSM & LTE Modem with Web GUI / RNDIS / CDC Ethernet mode. You can use the API available in this documentation to make a WAN connection, send SMS, get various information about your modem, and tons of other stuff.
 
 ## Usage
-Visit [https://mientz.github.io/zte-modem-api-docs/](https://mientz.github.io/zte-modem-api-docs/)
+Visit [https://mientz.github.io/zte-modem-api-docs/index.html](https://mientz.github.io/zte-modem-api-docs/index.html)
 
 ## Tested on:
 
@@ -54,7 +54,7 @@ Visit [https://mientz.github.io/zte-modem-api-docs/](https://mientz.github.io/zt
 
 ## Credits
 
-A heartfelt thankyou to @slatedocs for their [slate](https://github.com/slatedocs/slate) static API documentation builder
+A heartfelt thankyou to [slatedocs](https://github.com/slatedocs) for their [slate](https://github.com/slatedocs/slate) static API documentation builder
 
 ## License
 [Apache-2.0](LICENSE) - Mientz - 2021
