@@ -1,0 +1,1688 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Beeline MF90 API</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;http&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="http">http</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#request-and-response-formats" class="toc-h2 toc-link" data-title="Request and response formats">Request and response formats</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#form-id-2" class="toc-h2 toc-link" data-title="Form ID">Form ID</a>
+                  </li>
+                  <li>
+                    <a href="#parameters" class="toc-h2 toc-link" data-title="Parameters">Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#gsm-amp-lte" class="toc-h1 toc-link" data-title="GSM &amp; LTE">GSM &amp; LTE</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#gsm-amp-lte-object" class="toc-h2 toc-link" data-title="GSM &amp; LTE Object">GSM &amp; LTE Object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-gsm-amp-lte-properties" class="toc-h2 toc-link" data-title="Retrieve GSM &amp; LTE Properties">Retrieve GSM &amp; LTE Properties</a>
+                  </li>
+                  <li>
+                    <a href="#change-network-type" class="toc-h2 toc-link" data-title="Change Network Type">Change Network Type</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ppp-connection" class="toc-h1 toc-link" data-title="PPP Connection">PPP Connection</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ppp-connection-profile-object" class="toc-h2 toc-link" data-title="PPP Connection Profile Object">PPP Connection Profile Object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-ppp-properties" class="toc-h2 toc-link" data-title="Retrieve PPP Properties">Retrieve PPP Properties</a>
+                  </li>
+                  <li>
+                    <a href="#create-or-update-ppp-profile" class="toc-h2 toc-link" data-title="Create or Update PPP Profile">Create or Update PPP Profile</a>
+                  </li>
+                  <li>
+                    <a href="#remove-ppp-profile" class="toc-h2 toc-link" data-title="Remove PPP Profile">Remove PPP Profile</a>
+                  </li>
+                  <li>
+                    <a href="#set-default-profile" class="toc-h2 toc-link" data-title="Set Default Profile">Set Default Profile</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wan-cellular-connection" class="toc-h1 toc-link" data-title="WAN Cellular Connection">WAN Cellular Connection</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#wan-cellular-object" class="toc-h2 toc-link" data-title="WAN Cellular Object">WAN Cellular Object</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-wan-properties" class="toc-h2 toc-link" data-title="Retrieve WAN Properties">Retrieve WAN Properties</a>
+                  </li>
+                  <li>
+                    <a href="#set-wan-connection-mode" class="toc-h2 toc-link" data-title="Set WAN Connection Mode">Set WAN Connection Mode</a>
+                  </li>
+                  <li>
+                    <a href="#make-a-wan-connection" class="toc-h2 toc-link" data-title="Make a WAN Connection">Make a WAN Connection</a>
+                  </li>
+                  <li>
+                    <a href="#disconnect-the-wan-connection" class="toc-h2 toc-link" data-title="Disconnect The WAN Connection">Disconnect The WAN Connection</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#short-message-services" class="toc-h1 toc-link" data-title="Short Message Services">Short Message Services</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sms-object" class="toc-h2 toc-link" data-title="SMS Object">SMS Object</a>
+                  </li>
+                  <li>
+                    <a href="#message-status-code" class="toc-h2 toc-link" data-title="Message Status Code">Message Status Code</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-messages" class="toc-h2 toc-link" data-title="Retrieve Messages">Retrieve Messages</a>
+                  </li>
+                  <li>
+                    <a href="#retrieve-messaging-properties" class="toc-h2 toc-link" data-title="Retrieve Messaging Properties">Retrieve Messaging Properties</a>
+                  </li>
+                  <li>
+                    <a href="#send-message" class="toc-h2 toc-link" data-title="Send Message">Send Message</a>
+                  </li>
+                  <li>
+                    <a href="#delete-message" class="toc-h2 toc-link" data-title="Delete Message">Delete Message</a>
+                  </li>
+                  <li>
+                    <a href="#messaging-system-configuration" class="toc-h2 toc-link" data-title="Messaging System Configuration">Messaging System Configuration</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Beeline B10 API for ZTE MF90 MiFi! You can use this API to access and change device properties.</p>
+
+<p>The API oriented around two endpoint, accepts raw request bodies, returns JSON in plain text format, and disregard standard HTTP response code, authentication, and verbs.</p>
+<h2 id='request-and-response-formats'>Request and response formats</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_get_cmd_process?multi_data=1&amp;isTest=false&amp;cmd=modem_main_state%2Cpin_status%2Cloginfo%2Cnew_version_state%2Ccurrent_upgrade_state%2Cis_mandatory&amp;_=1620080390191</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json, text/javascript, */*; q=0.01</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+
+cmd=modem_main_state,pin_status,loginfo,new_version_state,current_upgrade_state,is_mandatory
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight http tab-http"><code><span class="k">HTTP</span><span class="o">/</span><span class="m">1.0</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Server</span><span class="p">:</span> <span class="s">GoAhead-Webs</span>
+<span class="na">Pragma</span><span class="p">:</span> <span class="s">no-cache</span>
+<span class="na">Cache-control</span><span class="p">:</span> <span class="s">no-cache</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">text/plain</span>
+
+{"modem_main_state":"modem_init_complete","pin_status":"0","loginfo":"no","new_version_state":"0","current_upgrade_state":"","is_mandatory":""}
+</code></pre></div>
+<p>In general, the Beeline API uses HTTP POST requests with <code>x-www-form-urlencoded</code> arguments and JSON responses in <code>text/plain</code> format. </p>
+
+<p>API authentication is using preliminary request that create authenticated sessions for limited time.</p>
+
+<aside class="warning">
+All request must contain header attribute <code>Referer</code> that linked to the device Web UI <code>index.html</code> file.
+</aside>
+<h3 id='multiple-attributes'>Multiple attributes</h3>
+<p>You can pass multiple object keys separated by comma into <code>cmd</code> parameter to retrieve multiple object in single request.</p>
+
+<p>eg: <code>cmd=modem_main_state,pin_status,...</code></p>
+
+<aside class="warning">
+Passing to much object keys can lead to unresponsive device that required <b>force reboot</b>. 
+It's advised to pass multiple object keys from the same group (eg: GSM & LTE Objects Group) to prevent said problem.
+</aside>
+<h3 id='form-id'>Form ID</h3>
+<p>When requesting a change to some properties using the endpoint <code>/goform/goform_set_cmd_process</code>, you required to pass an action <strong>Form ID</strong> as value for <code>goformId</code> parameter. </p>
+
+<p>eg: <code>goformId=&lt;form_id&gt;</code></p>
+<h1 id='authentication'>Authentication</h1><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+
+goformId=LOGIN&amp;password=&lt;password&gt;
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Beeline API didn&#39;t support any in-flight authorization, instead it relies on device sessions.</p>
+
+<aside class="notice">
+The duration of authenticated session is still <b>unknown!</b> The workaround to that limitation you can schedule recurring AUTH requests or do authentication as preliminary for every request.
+</aside>
+<h3 id='form-id-2'>Form ID</h3>
+<p><code>LOGIN</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>password</code></strong></td>
+<td>-</td>
+<td>Your password in <code>base64</code> encoding</td>
+</tr>
+</tbody></table>
+<h1 id='gsm-amp-lte'>GSM &amp; LTE</h1>
+<aside class="notice">
+Any change to GSM & LTE properties must be done with device at <code>disconnected</code> state
+</aside>
+<h2 id='gsm-amp-lte-object'>GSM &amp; LTE Object</h2>
+<blockquote>
+<p>Object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sim_imsi"</span><span class="p">:</span><span class="s2">"510103162079481"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hmcc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"510"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hmnc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hplmn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51010"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rssi"</span><span class="p">:</span><span class="s2">"-65"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rscp"</span><span class="p">:</span><span class="s2">"-68"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lte_rsrp"</span><span class="p">:</span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"network_type"</span><span class="p">:</span><span class="s2">"HSPA+"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"signalbar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"network_provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T-SEL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"spn_name_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00540045004C004B004F004D00530045004C"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"simcard_roam"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This objects representing your GSM &amp; LTE status.</p>
+
+<table><thead>
+<tr>
+<th>Object key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>sim_imsi</code></strong></td>
+<td>SIM Card <a href="https://en.wikipedia.org/wiki/International_mobile_subscriber_identity">International mobile subscriber identity number</a>. The first 3 digits represent the <a href="https://en.wikipedia.org/wiki/Mobile_country_code">mobile country code</a> (MCC), which is followed by the <a href="https://en.wikipedia.org/wiki/Mobile_network_code">mobile network code</a> (MNC), either 2-digit (European standard) or 3-digit (North American standard). The remaining digits are the <a href="https://en.wikipedia.org/wiki/Mobile_subscription_identification_number">mobile subscription identification number</a> (MSIN) within the network&#39;s customer base, usually 9 to 10 digits long, depending on the length of the MNC.</td>
+</tr>
+<tr>
+<td><strong><code>hmcc</code></strong></td>
+<td><a href="https://en.wikipedia.org/wiki/Mobile_country_code">Mobile country code</a> (MCC) of the carrier.</td>
+</tr>
+<tr>
+<td><strong><code>hmnc</code></strong></td>
+<td><a href="https://en.wikipedia.org/wiki/Mobile_network_code">Mobile network code</a> (MNC) of the carrier.</td>
+</tr>
+<tr>
+<td><strong><code>hplmn</code></strong></td>
+<td><a href="https://en.wikipedia.org/wiki/Public_land_mobile_network">Public land mobile network</a> (MNC) code of the carrier.</td>
+</tr>
+<tr>
+<td><strong><code>rssi</code></strong></td>
+<td><a href="https://en.wikipedia.org/wiki/Received_signal_strength_indication">received signal strength indicator</a> (RSSI) is a measurement of the power present in a received radio signal in decibel-milliwatts (dBm).</td>
+</tr>
+<tr>
+<td><strong><code>rscp</code></strong></td>
+<td><a href="https://en.wikipedia.org/wiki/Received_signal_code_power">Received signal code power</a> (RSCP) is a measurement of the received power level in an UMTS/WCDMA cell network in decibel-milliwatts (dBm).</td>
+</tr>
+<tr>
+<td><strong><code>lte_rsrp</code></strong></td>
+<td><a href="https://en.wikipedia.org/wiki/RSRP">Reference Signal Received Power</a> (RSRP) is a measurement of the received power level in an LTE cell network in decibel-milliwatts (dBm).</td>
+</tr>
+<tr>
+<td><strong><code>network_type</code></strong></td>
+<td>Currently connected network type. Available values are <code>GSM</code>, <code>GPRS</code>, <code>EDGE</code>, <code>UMTS</code>, <code>HSDPA</code>, <code>HSUPA</code>, <code>HSPA</code>, <code>HSPA+</code>, <code>DC</code>, <code>DC-HSPA</code>, <code>DC-HSPA+</code>, and <code>LTE</code>. This attribute will contain <code>limited_service</code> if the device can&#39;t establish with the GSM or LTE Network.</td>
+</tr>
+<tr>
+<td><strong><code>signalbar</code></strong></td>
+<td>Bar graph representation for signal strength.</td>
+</tr>
+<tr>
+<td><strong><code>network_provider</code></strong></td>
+<td>Shorter version of SIM card operator/carrier name.</td>
+</tr>
+<tr>
+<td><strong><code>spn_name_data</code></strong></td>
+<td>Advertised network/carrier name. Please see <a href="#decoding">Content Decoding</a> to decode the value.</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-gsm-amp-lte-properties'>Retrieve GSM &amp; LTE Properties</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_get_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+
+cmd=&lt;attributes&gt;
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sim_imsi"</span><span class="p">:</span><span class="s2">"510103162079481"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hmcc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"510"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve current GSM &amp; LTE info and settings</p>
+<h3 id='attributes'>Attributes</h3>
+<p>The <code>attributes</code> are the <a href="#gsm-amp-lte-object">object key</a> that you want to retrieve it&#39;s value. </p>
+<h2 id='change-network-type'>Change Network Type</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+
+goformId=SET_BEARER_PREFERENCE&amp;BearerPreference=Only_LTE
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The device had 3 network type which is 2G, 3G, and 4G network.</p>
+<h3 id='form-id-3'>Form ID</h3>
+<p><code>SET_BEARER_PREFERENCE</code></p>
+<h3 id='parameters-2'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>BearerPreference</code></strong></td>
+<td><em><code>NETWORK_auto</code></em></td>
+<td>Network Type. Available value are <code>NETWORK_auto</code>, <code>Only_LTE</code> <em>(4G)</em>, <code>Only_WCDMA</code> <em>(3G)</em>, or <code>Only_GSM</code> <em>(2G)</em>.</td>
+</tr>
+</tbody></table>
+<h1 id='ppp-connection'>PPP Connection</h1>
+<p>For the device to be able making WAN/internet connection, you need to create or set default <a href="https://en.wikipedia.org/wiki/Access_Point_Name">Access Point Name</a> (APN) profile.</p>
+<h2 id='ppp-connection-profile-object'>PPP Connection Profile Object</h2>
+<blockquote>
+<p>Object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"APN_config0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testv4($)test_apn($)manual($)*99#($)pap($)test_username($)test_password($)IP($)auto($)($)auto($)8.8.8.8($)8.8.8.8($)"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"APN_config19"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testv6($)($)manual($)*99#($)($)($)($)IPv6($)auto($)($)($)($)($)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_APN_config0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testv4($)($)manual($)*99#($)($)($)($)IP($)auto($)($)($)($)($)"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_APN_config19"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testv6($)test_apn($)manual($)*99#($)chap($)test_username($)test_password($)IPv6($)auto($)($)manual($)2001:4860:4860::8888($)2001:4860:4860::8844($)"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"m_profile_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testv4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wan_dial"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*99#"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pdp_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IPv4"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pdp_select"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Current_index"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"wan_apn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_apn"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ppp_auth_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pap"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ppp_username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_username"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ppp_passwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_password"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dns_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"prefer_dns_manual"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"standby_dns_manual"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_wan_apn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_apn"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_pdp_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IPv6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_ppp_auth_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chap"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_ppp_username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_username"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_ppp_passwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_password"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_dns_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manual"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_prefer_dns_manual"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001:4860:4860::8888"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ipv6_standby_dns_manual"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001:4860:4860::8844"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This objects representing your APN profile status</p>
+
+<table><thead>
+<tr>
+<th>Object key</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>APN_config0</code> ~ <code>APN_config19</code></strong></td>
+<td>A dictionary of PPP profiles for IPv4 PDP that saved on device memory. This keys had correlation with <code>ipv6_APN_config*</code> with the same index.</td>
+</tr>
+<tr>
+<td><strong><code>m_profile_name</code></strong></td>
+<td>Profile name from selected default PPP profile.</td>
+</tr>
+<tr>
+<td><strong><code>wan_dial</code></strong></td>
+<td>Dial number from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>pdp_type</code></strong></td>
+<td>PDP type from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>Current_index</code></strong></td>
+<td>Index of PPP profile that had been set as default.</td>
+</tr>
+<tr>
+<td><strong><code>wan_apn</code></strong></td>
+<td>Access point name for IPv4 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_auth_mode</code></strong></td>
+<td>Authentication method from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_username</code></strong></td>
+<td>PPP username from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_passwd</code></strong></td>
+<td>PPP password from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>dns_mode</code></strong></td>
+<td>DNS mode status from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>prefer_dns_manual</code></strong></td>
+<td>Primary DNS from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>standby_dns_manual</code></strong></td>
+<td>Fallback DNS from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_APN_config0</code> ~ <code>ipv6_APN_config19</code></strong></td>
+<td>A dictionary of PPP profiles for IPv6 PDP that saved on device memory. This keys had correlation with <code>APN_config*</code> with the same index.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_wan_apn</code></strong></td>
+<td>Access point name for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_ppp_auth_mode</code></strong></td>
+<td>Authentication method for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_ppp_username</code></strong></td>
+<td>PPP username for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_ppp_passwd</code></strong></td>
+<td>PPP password for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_dns_mode</code></strong></td>
+<td>DNS mode status for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_prefer_dns_manual</code></strong></td>
+<td>Primary DNS for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_standby_dns_manual</code></strong></td>
+<td>Fallback DNS for IPv6 PDP from selected default PPP Profile.</td>
+</tr>
+</tbody></table>
+<h3 id='parsing-profile'>Parsing profile</h3>
+<p>The saved PPP connection profiles that stored in <code>APN_config</code> and <code>ipv6_APN_config</code> slots is concatenated from array using <code>($)</code> delimiter.</p>
+
+<p>Here is an index table to identify key and value when parsing the profiles.</p>
+
+<table><thead>
+<tr>
+<th>Index</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>Profile name.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Access Point Name.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Indicator of how this profile is created.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PPP dial number.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PPP Authentication method.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PPP Username.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PPP Password.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>PDP type.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>PDP Select?.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>DNS mode.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Primary DNS.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Fallback DNS.</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-ppp-properties'>Retrieve PPP Properties</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_get_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+
+cmd=&lt;attributes&gt;
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"wan_dial"</span><span class="p">:</span><span class="s2">"*99#"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"pdp_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IPv4"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve current and saved PPP properties</p>
+<h3 id='attributes-2'>Attributes</h3>
+<p>The <code>attributes</code> are the <a href="#ppp-connection-profile-object">object key</a> that you want to retrieve it&#39;s value. </p>
+<h2 id='create-or-update-ppp-profile'>Create or Update PPP Profile</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=APN_PROC_EX&amp;apn_action=save&amp;apn_mode=manual&amp;3&amp;apn_select=manual&amp;pdp_select=auto
+profile_name=test1&amp;wan_dial=*99%2&amp;pdp_type=IP&amp;index=7&amp;wan_apn=test&amp;ppp_auth_mode=pap&amp;
+ppp_username=test&amp;ppp_passwd=test&amp;dns_mode=auto
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>In order to make a WAN connection, you must first create a PPP profile</p>
+<h3 id='form-id-4'>Form ID</h3>
+<p><code>APN_PROC_EX</code></p>
+<h3 id='actions'>Actions</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>apn_action</code></strong></td>
+<td><code>save</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong><code>apn_mode</code></strong></td>
+<td><code>manual</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong><code>pdp_select</code></strong></td>
+<td><code>auto</code></td>
+<td>yes</td>
+</tr>
+</tbody></table>
+<h3 id='parameters-3'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>profile_name</code></strong></td>
+<td><code>new profile</code></td>
+<td>Profile name.</td>
+</tr>
+<tr>
+<td><strong><code>wan_dial</code></strong></td>
+<td><code>*99#</code></td>
+<td>PPP dial number.</td>
+</tr>
+<tr>
+<td><strong><code>pdp_type</code></strong></td>
+<td><code>IP</code></td>
+<td>PDP type, Available values are <code>IP</code> (IPv4), <code>IPv6</code> (IPv6), <code>IPv4v6</code> (IPv4 and IPv6).</td>
+</tr>
+<tr>
+<td><strong><code>index</code></strong></td>
+<td><code>0</code></td>
+<td>Index of storage slot to store or update the profile. Available between <code>0</code> to <code>19</code>, 20 slot in total.</td>
+</tr>
+<tr>
+<td><strong><code>wan_apn</code></strong></td>
+<td><code>internet</code></td>
+<td>The <a href="https://en.wikipedia.org/wiki/Access_Point_Name">access Point Name</a> (APN) for your carrier.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_auth_mode</code></strong></td>
+<td><code>auto</code></td>
+<td>Authentication mode for PPP connection. Available values are <code>auto</code>, <code>pap</code>, and <code>chap</code>.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_username</code></strong></td>
+<td>-</td>
+<td>PPP username.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_passwd</code></strong></td>
+<td>-</td>
+<td>PPP password.</td>
+</tr>
+<tr>
+<td><strong><code>dns_mode</code></strong></td>
+<td><code>auto</code></td>
+<td>Set DNS mode between <code>manual</code> or <code>auto</code>.</td>
+</tr>
+<tr>
+<td><strong><code>prefer_dns_manual</code></strong></td>
+<td>-</td>
+<td>Primary DNS.</td>
+</tr>
+<tr>
+<td><strong><code>standby_dns_manual</code></strong></td>
+<td>-</td>
+<td>Fallback DNS.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+IPv6 PPP Profile - in order to use <b>IPv6</b> or both <b>IPv4 and v6</b> you need to fill and pass these parameters
+</aside>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>ipv6_wan_apn</code></strong></td>
+<td><code>internet</code></td>
+<td>The <a href="https://en.wikipedia.org/wiki/Access_Point_Name">access Point Name</a> (APN) for your carrier.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_ppp_auth_mode</code></strong></td>
+<td><code>auto</code></td>
+<td>Authentication mode for PPP connection. Available values are <code>auto</code>, <code>pap</code>, and <code>chap</code>.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_ppp_username</code></strong></td>
+<td>-</td>
+<td>PPP username.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_ppp_passwd</code></strong></td>
+<td>-</td>
+<td>PPP password.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_dns_mode</code></strong></td>
+<td><code>auto</code></td>
+<td>Set DNS mode between <code>manual</code> or <code>auto</code>.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_prefer_dns_manual</code></strong></td>
+<td>-</td>
+<td>Primary DNS.</td>
+</tr>
+<tr>
+<td><strong><code>ipv6_standby_dns_manual</code></strong></td>
+<td>-</td>
+<td>Fallback DNS.</td>
+</tr>
+</tbody></table>
+<h2 id='remove-ppp-profile'>Remove PPP Profile</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=APN_PROC_EX&amp;apn_action=delete&amp;index=7
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Remove PPP profile you didn&#39;t use.</p>
+<h3 id='form-id-5'>Form ID</h3>
+<p><code>APN_PROC_EX</code></p>
+<h3 id='actions-2'>Actions</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>apn_action</code></strong></td>
+<td><code>delete</code></td>
+<td>yes</td>
+</tr>
+</tbody></table>
+<h3 id='parameters-4'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>index</code></strong></td>
+<td>-</td>
+<td>Index of profile you want to remove from storage.</td>
+</tr>
+</tbody></table>
+<h2 id='set-default-profile'>Set Default Profile</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+isTest=false&amp;goformId=APN_PROC_EX&amp;apn_mode=manual&amp;apn_action=set_default&amp;set_default_flag=1&amp;pdp_type=IP&amp;index=6
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>You set the default PPP profile so that your WAN connection will use said profile</p>
+<h3 id='form-id-6'>Form ID</h3>
+<p><code>APN_PROC_EX</code></p>
+<h3 id='actions-3'>Actions</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>apn_mode</code></strong></td>
+<td><code>manual</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong><code>set_default</code></strong></td>
+<td><code>delete</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td><strong><code>set_default_flag</code></strong></td>
+<td><code>1</code></td>
+<td>yes</td>
+</tr>
+</tbody></table>
+<h3 id='parameters-5'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>index</code></strong></td>
+<td>-</td>
+<td>Index of profile you want to remove from storage.</td>
+</tr>
+<tr>
+<td><strong><code>pdp_type</code></strong></td>
+<td><code>IP</code></td>
+<td>PDP type of selected profile. Available values are <strong>IPv4</strong> (<code>IP</code>), <strong>IPv6</strong> (<code>IPv6</code>), and <strong>IPv4 <em>&amp;</em> IPv6 combined</strong> (<code>IPv4v6</code>)</td>
+</tr>
+</tbody></table>
+<h1 id='wan-cellular-connection'>WAN Cellular Connection</h1><h2 id='wan-cellular-object'>WAN Cellular Object</h2>
+<blockquote>
+<p>Object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"connectionMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto_dial"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"autoConnectWhenRoaming"</span><span class="p">:</span><span class="w"> </span><span class="s2">"off"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ppp_status"</span><span class="p">:</span><span class="s2">"ppp_connected"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realtime_rx_bytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1116739479"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realtime_rx_thrpt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1580"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realtime_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63821"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realtime_tx_bytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99545339"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realtime_tx_thrpt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3024"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthly_rx_bytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23120021145"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthly_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1062306"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthly_tx_bytes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2332584668"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This objects representing your WAN status</p>
+
+<table><thead>
+<tr>
+<th>Object key</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>connectionMode</code></strong></td>
+<td>Current connection mode setting.</td>
+</tr>
+<tr>
+<td><strong><code>autoConnectWhenRoaming</code></strong></td>
+<td>Status of auto connect the WAN even when roaming.</td>
+</tr>
+<tr>
+<td><strong><code>ppp_status</code></strong></td>
+<td>Current WAN connection status.</td>
+</tr>
+<tr>
+<td><strong><code>realtime_rx_bytes</code></strong></td>
+<td>Total data received since WAN connection started. Units are in Bytes.</td>
+</tr>
+<tr>
+<td><strong><code>realtime_rx_thrpt</code></strong></td>
+<td>Receive throughput speed. Units are in Bytes.</td>
+</tr>
+<tr>
+<td><strong><code>realtime_time</code></strong></td>
+<td>Total of seconds elapsed since WAN connection started.</td>
+</tr>
+<tr>
+<td><strong><code>realtime_tx_bytes</code></strong></td>
+<td>Total data transferred since WAN connection started. Units are in Bytes.</td>
+</tr>
+<tr>
+<td><strong><code>realtime_tx_thrpt</code></strong></td>
+<td>Transfer throughput speed. Units are in Bytes.</td>
+</tr>
+<tr>
+<td><strong><code>monthly_rx_bytes</code></strong></td>
+<td>Total of data received in current month. Units are in Bytes.</td>
+</tr>
+<tr>
+<td><strong><code>monthly_time</code></strong></td>
+<td>Total time since the month started. Units are in Unix Epoch Timestamp.</td>
+</tr>
+<tr>
+<td><strong><code>monthly_tx_bytes</code></strong></td>
+<td>Total of data transferred in current month.</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-wan-properties'>Retrieve WAN Properties</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_get_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+
+cmd=&lt;attributes&gt;
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"connectionMode"</span><span class="p">:</span><span class="s2">"auto_dial"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ppp_status"</span><span class="p">:</span><span class="s2">"ppp_connected"</span><span class="p">,</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve current WAN properties</p>
+<h3 id='attributes-3'>Attributes</h3>
+<p>The <code>attributes</code> are the <a href="#wan-cellular-object">object key</a> that you want to retrieve it&#39;s value.</p>
+<h2 id='set-wan-connection-mode'>Set WAN Connection Mode</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=SET_CONNECTION_MODE&amp;ConnectionMode=manual_dial&amp;roam_setting_option=off
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>You can set WAN connection mode to automatically or manually dialing. You can set auto dialing even when the device is roaming.</p>
+<h3 id='form-id-7'>Form ID</h3>
+<p><code>SET_CONNECTION_MODE</code></p>
+<h3 id='parameters-6'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>ConnectionMode</code></strong></td>
+<td><code>auto_dial</code></td>
+<td>Connection mode. Available values are <code>auto_dial</code> or <code>manual_dial</code>.</td>
+</tr>
+<tr>
+<td><strong><code>roam_setting_option</code></strong></td>
+<td><code>off</code></td>
+<td>Enable auto dial when roaming. Available values are <code>on</code> or <code>off</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='make-a-wan-connection'>Make a WAN Connection</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=CONNECT_NETWORK
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Make a WAN connection through cellular. </p>
+<h3 id='form-id-8'>Form ID</h3>
+<p><code>CONNECT_NETWORK</code></p>
+<h2 id='disconnect-the-wan-connection'>Disconnect The WAN Connection</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=DISCONNECT_NETWORK
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Disconnect the cellular WAN connection. </p>
+<h3 id='form-id-9'>Form ID</h3>
+<p><code>DISCONNECT_NETWORK</code></p>
+<h1 id='short-message-services'>Short Message Services</h1>
+<p>You can use this device to deliver and receive SMS.</p>
+
+<aside class="notice">
+For country that only support sending SMS over GSM/WCDMA, you will unable to deliver message when your network is <code>Only_LTE</code> (4G Only). To change your network check <a href="#change-network-type">Change Network Type</a>
+</aside>
+<h2 id='sms-object'>SMS Object</h2>
+<blockquote>
+<p>Object</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88441"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"004D0061007500200064006900620065006C0069006B0061006E0020006B0075006F0074006100200069006E007400650072006E006500740020006F006C00650068002000740065006D0061006E002F006B0065006C00750061007200670061003F000A00420061006C0061007300200053004D005300200069006E0069002000640067006E003A00200059004500530020003C006E006F006D006F0072002000740065006D0061006E002F006B0065006C00750061007200670061003E00200075006E00740075006B0020006D0069006E00740061002000700061006B0065007400200035003000300020004D0042002000520070002E003400720062002E0020000A0043006F006E0074006F0068003A0020005900450053002000300038003100320033003400350036003700380039"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21,05,28,14,31,29,+8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"draft_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"received_all_concat_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TELKOMSEL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"004B0075006F0074006100200046006C00610073006800200041006E00640061002000740065006C00610068002000680061006200690073002E00200041006E0064006100200061006B0061006E002000640069006B0065006E0061006B0061006E0020007400610072006900660020006E006F006E002000700061006B006500740020006A0069006B0061002000730065006C00750072007500680020006B0075006F00740061002000740065006C00610068002000680061006200690073002E002000530069006C0061006B0061006E002000630065006B0020006B0075006F0074006100200069006E007400650072006E006500740020006C00610069006E006E007900610020006100740061007500200061006B007400690066006B0061006E0020006B0065006D00620061006C0069002000700061006B0065007400200041006E006400610020006400690020002A00330036003300230020006100740061007500200064006F0077006E006C006F006100640020004D007900540065006C006B006F006D00730065006C00200061007000700020006400690020007400730065006C002E006D0065002F007400730065006C"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21,05,28,14,31,29,+8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"draft_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"received_all_concat_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"sms_para_sca"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6281100000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_para_mem_store"</span><span class="p">:</span><span class="w"> </span><span class="s2">"native"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_para_status_report"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_para_validity_period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"255"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_rev_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_send_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_draftbox_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_rev_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_send_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_draftbox_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This objects representing your SMS properties.</p>
+
+<table><thead>
+<tr>
+<th>Object key</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>messages</code></strong></td>
+<td>An array of message objects.</td>
+</tr>
+<tr>
+<td><strong><code>messages.id</code></strong></td>
+<td>Message ID.</td>
+</tr>
+<tr>
+<td><strong><code>messages.number</code></strong></td>
+<td>The phone number (in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format), <a href="https://en.wikipedia.org/wiki/Short_code">Short-Code</a>, or <a href="https://www.twilio.com/docs/sms/send-messages#use-an-alphanumeric-sender-id">alphanumeric sender ID</a> that initiated the message.</td>
+</tr>
+<tr>
+<td><strong><code>messages.content</code></strong></td>
+<td>The message content in <a href="https://www.twilio.com/docs/glossary/what-is-gsm-7-character-encoding">GSM-7</a> or UCS-2/Unicode format.</td>
+</tr>
+<tr>
+<td><strong><code>messages.tag</code></strong></td>
+<td>Message status code.</td>
+</tr>
+<tr>
+<td><strong><code>messages.date</code></strong></td>
+<td>The date and time that the message was sent or received.</td>
+</tr>
+<tr>
+<td><strong><code>messages.draft_group_id</code></strong></td>
+<td>???</td>
+</tr>
+<tr>
+<td><strong><code>messages.received_all_concat_sms</code></strong></td>
+<td>An indication that all message content are received.</td>
+</tr>
+<tr>
+<td><strong><code>messages.concat_sms_total</code></strong></td>
+<td>Total message concatenated to make the message content completed.</td>
+</tr>
+<tr>
+<td><strong><code>messages.concat_sms_received</code></strong></td>
+<td>Total message received to make the message content completed.</td>
+</tr>
+<tr>
+<td><strong><code>sms_para_sca</code></strong></td>
+<td>The <a href="https://en.wikipedia.org/wiki/Short_Message_service_center">Short Message Service Center</a> (SMSC).</td>
+</tr>
+<tr>
+<td><strong><code>sms_para_mem_store</code></strong></td>
+<td>The location of message storage.</td>
+</tr>
+<tr>
+<td><strong><code>sms_para_status_report</code></strong></td>
+<td>SMS delivery report setting.</td>
+</tr>
+<tr>
+<td><strong><code>sms_para_validity_period</code></strong></td>
+<td>SMS validity period setting.</td>
+</tr>
+<tr>
+<td><strong><code>sms_nv_total</code></strong></td>
+<td>Device storage size.</td>
+</tr>
+<tr>
+<td><strong><code>sms_sim_total</code></strong></td>
+<td>SIM storage size.</td>
+</tr>
+<tr>
+<td><strong><code>sms_nv_rev_total</code></strong></td>
+<td>Total message received that stored in device memory.</td>
+</tr>
+<tr>
+<td><strong><code>sms_nv_send_total</code></strong></td>
+<td>Total message sent that stored in device memory.</td>
+</tr>
+<tr>
+<td><strong><code>sms_nv_draftbox_total</code></strong></td>
+<td>Total message draft that stored in device memory.</td>
+</tr>
+<tr>
+<td><strong><code>sms_sim_rev_total</code></strong></td>
+<td>Total message received that stored in SIM memory.</td>
+</tr>
+<tr>
+<td><strong><code>sms_sim_send_total</code></strong></td>
+<td>Total message sent that stored in SIM memory.</td>
+</tr>
+<tr>
+<td><strong><code>sms_sim_draftbox_total</code></strong></td>
+<td>Total message draft that stored in SIM memory.</td>
+</tr>
+</tbody></table>
+<h2 id='message-status-code'>Message Status Code</h2>
+<p>The code that listed in <code>tag</code> attribute in <code>messages</code> object.</p>
+
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Status</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>1</code></strong></td>
+<td>Unread received message.</td>
+</tr>
+<tr>
+<td><strong><code>0</code></strong></td>
+<td>Received message.</td>
+</tr>
+<tr>
+<td><strong><code>2</code></strong></td>
+<td>Message sent.</td>
+</tr>
+<tr>
+<td><strong><code>3</code></strong></td>
+<td>Message failed to be sent.</td>
+</tr>
+<tr>
+<td><strong><code>4</code></strong></td>
+<td>Draft.</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-messages'>Retrieve Messages</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_get_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+cmd=sms_data_total&amp;page=0&amp;data_per_page=500&amp;mem_store=1&amp;tags=4&amp;order_by=order+by+id+desc
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88441"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0059006F007500200068006100760065006E0027007400200072006500730070006F006E00640065006400200069006E002000740069006D00650020007700680065007400680065007200200079006F0075002000770061006E00740065006400200074006F002000730065006E006400200079006F007500720020006D00650073007300610067006500200074006F0020002B00360032003800320031003300310030003700390034003800310020002800290020006100730020006100200043006F006C006C00650063007400200044006100740061002E00200059006F007500720020006D006500730073006100670065002000770069006C006C0020006E006F0074002000620065002000640065006C006900760065007200650064002E"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21,05,28,20,31,30,+8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"draft_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"received_all_concat_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88441"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"004D0061007500200064006900620065006C0069006B0061006E0020006B0075006F0074006100200069006E007400650072006E006500740020006F006C00650068002000740065006D0061006E002F006B0065006C00750061007200670061003F000A00420061006C0061007300200053004D005300200069006E0069002000640067006E003A00200059004500530020003C006E006F006D006F0072002000740065006D0061006E002F006B0065006C00750061007200670061003E00200075006E00740075006B0020006D0069006E00740061002000700061006B0065007400200035003000300020004D0042002000520070002E003400720062002E0020000A0043006F006E0074006F0068003A0020005900450053002000300038003100320033003400350036003700380039"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21,05,28,14,31,29,+8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"draft_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"received_all_concat_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"concat_sms_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve messages</p>
+<h3 id='attributes-4'>Attributes</h3>
+<p><code>sms_data_total</code></p>
+<h3 id='parameters-7'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong><code>mem_store</code></strong></td>
+<td><code>1</code></td>
+<td>Message storage filter. Available values are <strong>SIM</strong> (<code>0</code>) and <strong>Device</strong> (<code>1</code>).</td>
+</tr>
+<tr>
+<td><strong><code>tags</code></strong></td>
+<td><code>10</code></td>
+<td><a href="#message-status-code">Message status code</a> filter. You can put value of <code>10</code> to retrieve all messages.</td>
+</tr>
+<tr>
+<td><strong><code>page</code></strong></td>
+<td><code>0</code></td>
+<td>Page index.</td>
+</tr>
+<tr>
+<td><strong><code>data_per_page</code></strong></td>
+<td><code>500</code></td>
+<td>The total of messages presented per pages.</td>
+</tr>
+<tr>
+<td><strong><code>order_by</code></strong></td>
+<td><code>order+by+id+desc</code></td>
+<td>Sort the data by values. Available order are by <strong>ID</strong> (<code>order+by+id+asc</code> <em>or</em> <code>order+by+id+desc</code>) or <strong>date</strong> (<code>order+by+date+asc</code> <em>or</em> <code>order+by+date+desc</code>)</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-messaging-properties'>Retrieve Messaging Properties</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_get_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+cmd=sms_capacity_info
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sms_nv_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_rev_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_send_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_nv_draftbox_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_rev_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_send_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sms_sim_draftbox_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Retrieve the messaging properties</p>
+<h3 id='attributes-5'>Attributes</h3>
+<p><code>sms_capacity_info</code> to retrieve message capacity info or  the <a href="#sms-object">object key</a> that you want to retrieve it&#39;s value. </p>
+<h2 id='send-message'>Send Message</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=SEND_SMS&amp;notCallback=true&amp;Number=+6285157458688&amp;sms_time=21;06;01;11;46;56;+7&amp;MessageBody=0074006500730074&amp;ID=-1&amp;encode_type=GSM7_default
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Send messages</p>
+<h3 id='form-id-10'>Form ID</h3>
+<p><code>SEND_SMS</code> to send the messages.<br>
+<code>SAVE_SMS</code> Save as draft.</p>
+<h3 id='parameters-8'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>Number</code></td>
+<td>-</td>
+<td>The recipient number in international format. eg: <code>+1854xxxxx</code></td>
+</tr>
+<tr>
+<td><code>sms_time</code></td>
+<td>-</td>
+<td>The time when message sent.</td>
+</tr>
+<tr>
+<td><code>MessageBody</code></td>
+<td>-</td>
+<td>The message content in <a href="https://www.twilio.com/docs/glossary/what-is-gsm-7-character-encoding">GSM-7</a> character encoding.</td>
+</tr>
+<tr>
+<td><code>ID</code></td>
+<td><code>-1</code></td>
+<td>Auto increment ID.</td>
+</tr>
+<tr>
+<td><code>encode_type</code></td>
+<td><code>GSM7_default</code></td>
+<td>Message content encoding. Available values are <strong>GSM-7</strong> (<code>GSM7_default</code>) or <strong>UCS-2/Unicode</strong> (<code>UNICODE</code>)</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+Make sure to use appropriate <b><code>encode_type</code></b> with the message content you are sending, otherwise the message sent will not displayed properly in recipient device. Basic rule of thumb is to use available character in older brick <i>(dumb)</i> T9 phone.
+</aside>
+<h2 id='delete-message'>Delete Message</h2><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/goform/goform_set_cmd_process</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">192.168.0.1</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/x-www-form-urlencoded; charset=UTF-8</span>
+<span class="na">Referer</span><span class="p">:</span> <span class="s">http://192.168.0.1/index.html</span>
+<span class="na">Content-Length</span><span class="p">:</span> <span class="s">265</span>
+
+goformId=DELETE_SMS&amp;notCallback=true&amp;msg_id=1
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Delete the selected message</p>
+<h3 id='form-id-11'>Form ID</h3>
+<p><code>DELETE_SMS</code></p>
+<h3 id='parameters-9'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Descriptions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>msg_id</code></td>
+<td>-</td>
+<td>The message ID you want to delete.</td>
+</tr>
+</tbody></table>
+<h2 id='messaging-system-configuration'>Messaging System Configuration</h2><h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="http">http</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
