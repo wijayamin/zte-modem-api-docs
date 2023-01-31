@@ -40,7 +40,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.3.6)
+    activesupport (6.0.6.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -55,7 +55,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.2.0)
     contracts (0.13.0)
     dotenv (2.7.6)
     em-websocket (0.5.2)
@@ -96,7 +96,7 @@ GEM
       middleman-core (>= 3.2)
       rouge (~> 3.2)
     mini_portile2 (2.6.1)
-    minitest (5.14.4)
+    minitest (5.17.0)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -136,12 +136,12 @@ GEM
     tilt (2.0.10)
     toml (0.2.0)
       parslet (~> 1.8.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.11)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     webrick (1.7.0)
-    zeitwerk (2.4.2)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
