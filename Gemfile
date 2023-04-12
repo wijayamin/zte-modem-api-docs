@@ -9,6 +9,6 @@ gem 'middleman-sprockets', '~> 4.1'
 gem "middleman-livereload", "~> 3.4.3"
 gem 'rouge', '~> 3.21'
 gem 'redcarpet', '~> 3.5.0'
-gem 'nokogiri', '~> 1.12.5'
+gem 'nokogiri', '~> 1.14.3'
 gem 'sass'
 gem 'webrick'
